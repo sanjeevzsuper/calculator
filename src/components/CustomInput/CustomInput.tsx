@@ -5,6 +5,7 @@ interface ICustomInputProps {
   className?: string;
   onChange: (value: string) => void;
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  placeholder?: string;
   type?: ComponentProps<"input">["type"];
   value: string;
 }

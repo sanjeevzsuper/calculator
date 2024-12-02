@@ -49,5 +49,8 @@ export const computeVariableValue = (
   value: string,
   variables: { [key: string]: number }
 ) => {
-  return variables[value] || value;
+  if (variables[value] || variables[value] === 0) {
+    return variables[value];
+  }
+  return value;
 };

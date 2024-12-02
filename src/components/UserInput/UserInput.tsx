@@ -31,8 +31,8 @@ const Input = (props: IInputProps) => {
   );
   const [result, setResult] = useState<string | number>(initialResult);
 
-  const showResult = !!value && !!result && !isNaN(parseFloat(`${result}`));
-  const showError = !!value && !!result && isNaN(parseFloat(`${result}`));
+  const showResult = !!value && !isNaN(parseFloat(`${result}`));
+  const showError = !!value && !showResult;
 
   const { setHistory } = useContext(AppContext);
 
@@ -119,6 +119,7 @@ const Input = (props: IInputProps) => {
           onKeyPress={onKeyPress}
           value={value}
           onChange={handleInputChange}
+          placeholder="eg: a^2+b^2 or sin(30) etc..."
         />
         <img
           onClick={onCloseClick}
@@ -127,7 +128,9 @@ const Input = (props: IInputProps) => {
         />
       </div>
       {renderVariableInput()}
-      {showResult && <div className="inputResult">{result}</div>}
+      {showError
+        ? "Invalid Expression"
+        : showResult && <div className="inputResult">{result}</div>}
     </div>
   );
 };
