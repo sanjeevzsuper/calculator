@@ -1,46 +1,87 @@
-# Getting Started with Create React App
+# Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The **Calculator** project is a React-based application developed with TypeScript. It offers a clean and interactive UI for performing arithmetic operations. The project is structured to be developer-friendly and follows modern React practices.
 
-In the project directory, you can run:
+## Features
 
-### `yarn start`
+- Built with React and TypeScript.
+- Unit testing setup using `@testing-library/react`.
+- Pre-configured ESLint and Prettier for consistent code style.
+- Optimized for modern browsers.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To set up and run the project locally, follow these steps:
 
-### `yarn test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   git clone https://github.com/sanjeevzsuper/calculator.git
+   cd calculator
+   ```
 
-### `yarn build`
+2. Install the dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Start the development server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm start
+   ```
 
-### `yarn eject`
+   The application will be available at `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Scripts
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Here are the available npm scripts for development and testing:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Start the development server**: `npm start`
+- **Build the production version**: `npm run build`
+- **Run tests**: `npm test`
+- **Eject the configuration**: `npm run eject`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Project Structure
 
-## Learn More
+The project follows a standard React structure:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+calculator/
+├── public/                # Static files
+├── src/                   # Source code
+│   ├── assets/            # Reusable assets
+│   ├── components/        # Reusable components
+│   ├── constants/         # Constants files
+│   ├── contexts/          # Context files for state management
+│   ├── types/             # Reusable types
+│   ├── utils/             # Reusable utilities
+│   ├── App.tsx            # Main app entry
+│   ├── index.tsx          # ReactDOM render entry
+│   └── styles/            # Application styles
+├── package.json           # Project metadata and dependencies
+└── README.md              # Project documentation
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Dependencies
+
+Key dependencies used in this project:
+
+- `react`: ^18.3.1
+- `react-dom`: ^18.3.1
+- `typescript`: ^4.4.2
+- `@testing-library/react`: ^13.0.0
+
+For a complete list, see `package.json`.
+
+## Development Notes
+
+- Ensure that you have Node.js and npm installed.
+- Follow the Prettier and ESLint configurations to maintain code consistency.
+
+## License
+
+This project is licensed under [LICENSE].

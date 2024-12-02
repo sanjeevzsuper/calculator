@@ -36,6 +36,10 @@ const Input = (props: IInputProps) => {
 
   const { setHistory } = useContext(AppContext);
 
+  /**
+   * This function is used to calculate the formulae result
+   * @param rawExpression :string
+   */
   const getComputedValue = (rawExpression: string) => {
     const trigoProcessedValue =
       preprocessTrigoLogarithmicExpression(rawExpression);
@@ -43,7 +47,6 @@ const Input = (props: IInputProps) => {
     const newSplittedValue = splittedValues.map((value) =>
       computeVariableValue(value, variables)
     );
-    console.log("After Compute", newSplittedValue);
     const newValues = newSplittedValue.join("");
     const computed = evaluateExpression(newValues, result.toString());
     setResult(computed);
@@ -53,6 +56,11 @@ const Input = (props: IInputProps) => {
     );
   };
 
+  /**
+   * This function is used to handle the input value change
+   * @param newValue :string
+   * @returns void
+   */
   const handleInputChange = (newValue: string) => {
     const userInput = newValue;
 
@@ -77,18 +85,29 @@ const Input = (props: IInputProps) => {
     setValue(userInput);
   };
 
+  /**
+   * This function is used to update variable values
+   * @param variable :string
+   * @param newValue : string
+   * @returns void
+   */
   const handleVariableValue = (variable: string, newValue: string) => {
     const newVariables = { ...variables };
     newVariables[variable] = parseFloat(newValue);
     setVariables(newVariables);
   };
 
+  /**
+   * This function is used to add new formulae input field whenever user press enter
+   * @param event: React.KeyboardEvent<HTMLInputElement>
+   */
   const onKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       onEnterPress && onEnterPress();
     }
   };
 
+  //This functions is used to render input box for variable values
   const renderVariableInput = () => {
     return (
       <div className="inputVariableContainer">
@@ -106,6 +125,9 @@ const Input = (props: IInputProps) => {
     );
   };
 
+  /**
+   * This useEffect is used to compute the formulae results whenever variable value changes
+   */
   useEffect(() => {
     getComputedValue(value);
   }, [variables]);
