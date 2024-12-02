@@ -1,0 +1,35 @@
+.historyContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.historyItem {
+  font-size: 24px;
+  font-weight: 500;
+  color: black;
+}
+
+.historyContainer > button {
+  margin-top: 10px;
+  align-self: flex-end;
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+  .historyItem {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}

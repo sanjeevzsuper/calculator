@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  background-image: url("./assets/images/background.jpg");
+  background-size: cover;
+}
+
+.subContainer {
+  width: 30%;
+  height: 100%;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+
+  .subContainer {
+    display: unset;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 50%;
+    overflow: scroll;
+  }
+}
